@@ -1,0 +1,25 @@
+name: Build and deploy wheel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Build Docker image
+      run: make build PYTHON_VERSION=3
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: wheel-file
+        path: dist/*.whl
