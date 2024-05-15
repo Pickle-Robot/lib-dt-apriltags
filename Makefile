@@ -1,6 +1,7 @@
 ROOT=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 PYTHON_VERSION=""
 ARCH="amd64"
+INTERACTIVE="-it"
 
 build:
 	# create build environment
@@ -13,7 +14,8 @@ build:
 	mkdir -p ${ROOT}/dist
 	# build wheel
 	docker run \
-		-it --rm \
+		${INTERACTIVE} \
+		--rm \
 		-v ${ROOT}:/source \
 		-v ${ROOT}/dist:/out \
 		${ARCH}/dt_apriltags:wheel-python${$PYTHON_VERSION}

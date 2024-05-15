@@ -19,7 +19,7 @@ jobs:
         submodules: recursive
 
     - name: Build Docker image
-      run: make build PYTHON_VERSION=3
+      run: make build PYTHON_VERSION=3 INTERACTIVE=""
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
