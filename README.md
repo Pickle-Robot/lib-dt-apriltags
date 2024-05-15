@@ -1,3 +1,6 @@
+# Uploaded artifacts
+The wheel file is built when creating a PR to `main`. The results are then uploaded to the Github Action summary (e.g., [this run](https://github.com/Pickle-Robot/lib-dt-apriltags/actions/runs/9099353348)).
+
 # lib-dt-apriltags: Python bindings for the Apriltags library
 
 These are Python bindings for the [Apriltags 3](https://github.com/AprilRobotics/apriltags) library developed by [AprilRobotics](https://april.eecs.umich.edu/). Inspired by the [Apriltags2 bindings](https://github.com/swatbotics/apriltag) by [Matt Zucker](https://github.com/mzucker).
